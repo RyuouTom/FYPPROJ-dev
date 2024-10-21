@@ -1,0 +1,38 @@
+[
+  {
+    "challenge_name": "CIPHEREDDD",
+    "question": "What is the flag for qn 1?",
+    "flag": "flagctf1",
+    "category": "Somecategory",
+    "points": 10,
+    "hints": [
+      "Think about classic ciphers.",
+      "Focus on substitution methods.",
+      "Try shifting letters."
+    ]
+  },
+  {
+    "challenge_name": "FLAGHUNT2",
+    "question": "What is the flag for qn 2?",
+    "flag": "flagctf2",
+    "category": "Somecategory",
+    "points": 25,
+    "hints": [
+      "Look closely at the file name.",
+      "Examine metadata.",
+      "Is there something hidden in plain sight?"
+    ]
+  },
+  {
+    "challenge_name": "NEW_CHALLENGE",
+    "question": "What is the flag for the new question?",
+    "flag": "new_flag",
+    "category": "NewCategory",
+    "points": 15,
+    "hints": [
+      "This is a hint 1",
+      "This is a hint 2",
+      "This is a hint 3"
+    ]
+  }
+]

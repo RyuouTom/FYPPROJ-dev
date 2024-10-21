@@ -1,0 +1,21 @@
+{
+    "name": "postgres-express-qa-server",
+    "private": true,
+    "scripts": {
+      "start": "node index.js",
+      "dev": "nodemon index.js"
+    },
+    "dependencies": {
+      "express": "^4.17.1",
+      "pg": "^8.7.1",
+      "dotenv": "^10.0.0"
+    },
+    "devDependencies": {
+      "nodemon": "^2.0.15"
+    },
+    "overrides": {
+      "semver": "^7.5.3" 
+    }
+  }
+
+  
