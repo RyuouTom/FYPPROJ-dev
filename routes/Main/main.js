@@ -23,7 +23,13 @@ router.post('/check-flag', async (req, res) => {
     const correctAnswer = result.rows[0].flag;
     const isCorrect = flag.trim().toLowerCase() === correctAnswer.trim().toLowerCase();
 
-    res.json({ correct: isCorrect });
+    if (isCorrect) {
+      // Send a positive response if the flag is correct
+      return res.json({ correct: true });
+    } else {
+      // Send a different response for incorrect flag
+      return res.json({ correct: false, message: 'Incorrect flag' });
+    }
   } catch (err) {
     console.error('Error querying database:', err);
     res.status(500).json({ error: 'Internal server error' });
