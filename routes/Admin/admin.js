@@ -12,20 +12,6 @@ questionsFilePath = 'questions.json'
 router.post('/setup-database', async (req, res) => {
   const client = await pool.connect();
   try {
-    await client.query(`
-      DROP TABLE IF EXISTS questions;
-
-      CREATE TABLE IF NOT EXISTS questions (
-          id SERIAL PRIMARY KEY,
-          challenge_name TEXT NOT NULL,
-          question TEXT NOT NULL,
-          flag TEXT NOT NULL,
-          category TEXT NOT NULL,
-          points INTEGER NOT NULL,
-          hints TEXT[] -- Using PostgreSQL array type to store multiple hints
-      );
-    `);
-
     // Insert questions, flags, and other fields
     for (const qa of questionsAndAnswers) {
       await client.query(
@@ -77,22 +63,6 @@ router.post('/create-question', async (req, res) => {
 
   const client = await pool.connect();
   try {
-    // Drop the existing questions table
-    await client.query(`DROP TABLE IF EXISTS questions;`);
-
-    // Create the questions table
-    await client.query(`
-      CREATE TABLE IF NOT EXISTS questions (
-          id SERIAL PRIMARY KEY,
-          challenge_name TEXT NOT NULL,
-          question TEXT NOT NULL,
-          flag TEXT NOT NULL,
-          category TEXT NOT NULL,
-          points INTEGER NOT NULL,
-          hints TEXT[] -- Using PostgreSQL array type to store multiple hints
-      );
-    `);
-
     // Insert the updated questions into the database
     for (const qa of questionsAndAnswers) {
       await client.query(
